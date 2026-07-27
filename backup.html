@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="Icon" href="./images/Icon.png">
+</head>
+<style>
+    body{
+        background-color: rgb(32, 32, 32);
+        text-align: center;
+    }
+</style>
+<body>
+    <h1 style="color: white; margin-top: 10rem;" id="Text">Redirecting</h1>
+    <h1 style="color: rgb(104, 103, 103); margin-top: 0rem;">در حال انتقال</h1>
+    <script>
+        // Create the sleep function
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // Get the element by ID
+        const textElement = document.getElementById('Text');
+
+        // Async function to run the animation
+        async function animateLoadingText() {
+            const baseText = "Redirecting";
+            const dots = ["", ".", "..", "..."]; // Different dot variations
+            
+            // Run 10 times
+            for (let i = 0; i < 10; i++) {
+                // Calculate which dot pattern to show (cycles through 0,1,2,3)
+                const dotIndex = i % dots.length;
+                textElement.textContent = baseText + dots[dotIndex];
+                
+                // Wait 0.5 seconds
+                await sleep(500);
+            }
+            
+            // Optional: After 10 loops, set final text
+            textElement.textContent = "Redirecting...";
+        }
+
+        // Call the function
+        animateLoadingText();
+        window.location = "https://www.instagram.com/mshir_ir"
+
+
+
+
+    </script>
+</body>
+
+</html>
